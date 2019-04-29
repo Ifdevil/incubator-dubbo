@@ -40,7 +40,9 @@ public class InvokerInvocationHandler implements InvocationHandler {
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         String methodName = method.getName();
+        //参数类型
         Class<?>[] parameterTypes = method.getParameterTypes();
+        //方法所属的类
         if (method.getDeclaringClass() == Object.class) {
             return method.invoke(invoker, args);
         }
